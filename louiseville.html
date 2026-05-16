@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          14 demandes de réparation cette semaine
+          24 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -213,10 +213,11 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" name="devis-reparation-thermopompe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="devis-reparation-thermopompe">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="d0cdf004-bd9a-40d1-a49a-fb91f28363ed">
+  <input type="hidden" name="subject" value="Nouveau lead — Réparation Thermopompe Québec — Louiseville">
   <input type="hidden" name="ville-cible" value="Louiseville">
-  <p class="hidden"><label>Ne pas remplir: <input name="bot-field"></label></p>
+  <input type="hidden" name="botcheck" value="">
 
   <div class="rp-form-step active" id="step-1">
     <p style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.875rem">Problème constaté</p>
@@ -854,28 +855,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          14 demandes de réparation cette semaine
+          24 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Mauricie (04)</h4>
         <div class="el-footer__links">
-          <a href="/lac-masketsi">Lac-Masketsi</a>
-          <a href="/lac-normand">Lac-Normand</a>
-          <a href="/saint-stanislas">Saint-Stanislas</a>
-          <a href="/wemotaci">Wemotaci</a>
+          <a href="/maskinonge">Maskinongé</a>
+          <a href="/sainte-thecle">Sainte-Thècle</a>
           <a href="/lac-aux-sables">Lac-aux-Sables</a>
-          <a href="/lac-edouard">Lac-Édouard</a>
-          <a href="/batiscan">Batiscan</a>
-          <a href="/saint-elie-de-caxton">Saint-Élie-de-Caxton</a>
-          <a href="/notre-dame-du-mont-carmel">Notre-Dame-du-Mont-Carmel</a>
-          <a href="/saint-etienne-des-gres">Saint-Étienne-des-Grès</a>
+          <a href="/saint-leon-le-grand">Saint-Léon-le-Grand</a>
+          <a href="/obedjiwan">Obedjiwan</a>
+          <a href="/la-bostonnais">La Bostonnais</a>
+          <a href="/saint-edouard-de-maskinonge">Saint-Édouard-de-Maskinongé</a>
+          <a href="/saint-justin">Saint-Justin</a>
+          <a href="/saint-alexis-des-monts">Saint-Alexis-des-Monts</a>
+          <a href="/saint-maurice">Saint-Maurice</a>
+          <a href="/sainte-angele-de-premont">Sainte-Angèle-de-Prémont</a>
+          <a href="/lac-normand">Lac-Normand</a>
           <a href="/coucoucache">Coucoucache</a>
-          <a href="/saint-severin">Saint-Séverin</a>
-          <a href="/yamachiche">Yamachiche</a>
-          <a href="/herouxville">Hérouxville</a>
-          <a href="/saint-paulin">Saint-Paulin</a>
+          <a href="/la-tuque">La Tuque</a>
+          <a href="/trois-rives">Trois-Rives</a>
         </div>
       </div>
 
@@ -971,7 +972,7 @@ function nextStep(n) {
 
 function prevStep(n) { showStep(n); }
 
-var _submitUrl = '/';
+var _submitUrl = 'https://api.web3forms.com/submit';
 var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {

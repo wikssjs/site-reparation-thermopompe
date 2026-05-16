@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          9 demandes de réparation cette semaine
+          4 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -213,10 +213,11 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" name="devis-reparation-thermopompe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="devis-reparation-thermopompe">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="d0cdf004-bd9a-40d1-a49a-fb91f28363ed">
+  <input type="hidden" name="subject" value="Nouveau lead — Réparation Thermopompe Québec — Saint-Agapit">
   <input type="hidden" name="ville-cible" value="Saint-Agapit">
-  <p class="hidden"><label>Ne pas remplir: <input name="bot-field"></label></p>
+  <input type="hidden" name="botcheck" value="">
 
   <div class="rp-form-step active" id="step-1">
     <p style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.875rem">Problème constaté</p>
@@ -848,28 +849,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          9 demandes de réparation cette semaine
+          4 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Chaudière-Appalaches (12)</h4>
         <div class="el-footer__links">
-          <a href="/notre-dame-des-pins">Notre-Dame-des-Pins</a>
-          <a href="/saint-malachie">Saint-Malachie</a>
-          <a href="/beaumont">Beaumont</a>
-          <a href="/saint-louis-de-gonzague">Saint-Louis-de-Gonzague</a>
-          <a href="/beaulac-garthby">Beaulac-Garthby</a>
-          <a href="/levis">Lévis</a>
-          <a href="/saint-frederic">Saint-Frédéric</a>
-          <a href="/saint-adrien-d-irlande">Saint-Adrien-d'Irlande</a>
-          <a href="/lac-poulin">Lac-Poulin</a>
-          <a href="/saint-patrice-de-beaurivage">Saint-Patrice-de-Beaurivage</a>
-          <a href="/saint-magloire">Saint-Magloire</a>
-          <a href="/saint-edouard-de-lotbiniere">Saint-Édouard-de-Lotbinière</a>
-          <a href="/irlande">Irlande</a>
           <a href="/saint-lazare-de-bellechasse">Saint-Lazare-de-Bellechasse</a>
-          <a href="/saint-cyprien">Saint-Cyprien</a>
+          <a href="/saint-rene">Saint-René</a>
+          <a href="/saint-gervais">Saint-Gervais</a>
+          <a href="/sainte-henedine">Sainte-Hénédine</a>
+          <a href="/sainte-louise">Sainte-Louise</a>
+          <a href="/saint-joseph-des-erables">Saint-Joseph-des-Érables</a>
+          <a href="/sainte-perpetue">Sainte-Perpétue</a>
+          <a href="/saint-martin">Saint-Martin</a>
+          <a href="/saint-pierre-de-broughton">Saint-Pierre-de-Broughton</a>
+          <a href="/notre-dame-du-sacre-coeur-d-issoudun">Notre-Dame-du-Sacré-Coeur-d'Issoudun</a>
+          <a href="/dosquet">Dosquet</a>
+          <a href="/saint-edouard-de-lotbiniere">Saint-Édouard-de-Lotbinière</a>
+          <a href="/vallee-jonction">Vallée-Jonction</a>
+          <a href="/saint-come-liniere">Saint-Côme--Linière</a>
+          <a href="/beauceville">Beauceville</a>
         </div>
       </div>
 
@@ -965,7 +966,7 @@ function nextStep(n) {
 
 function prevStep(n) { showStep(n); }
 
-var _submitUrl = '/';
+var _submitUrl = 'https://api.web3forms.com/submit';
 var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {

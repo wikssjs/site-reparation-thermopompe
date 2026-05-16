@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          10 demandes de réparation cette semaine
+          4 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -213,10 +213,11 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" name="devis-reparation-thermopompe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="devis-reparation-thermopompe">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="d0cdf004-bd9a-40d1-a49a-fb91f28363ed">
+  <input type="hidden" name="subject" value="Nouveau lead — Réparation Thermopompe Québec — Linton">
   <input type="hidden" name="ville-cible" value="Linton">
-  <p class="hidden"><label>Ne pas remplir: <input name="bot-field"></label></p>
+  <input type="hidden" name="botcheck" value="">
 
   <div class="rp-form-step active" id="step-1">
     <p style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.875rem">Problème constaté</p>
@@ -860,28 +861,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          10 demandes de réparation cette semaine
+          4 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Capitale-Nationale (03)</h4>
         <div class="el-footer__links">
-          <a href="/lac-jacques-cartier">Lac-Jacques-Cartier</a>
-          <a href="/sainte-catherine-de-la-jacques-cartier">Sainte-Catherine-de-la-Jacques-Cartier</a>
-          <a href="/fossambault-sur-le-lac">Fossambault-sur-le-Lac</a>
-          <a href="/lac-croche">Lac-Croche</a>
-          <a href="/stoneham-et-tewkesbury">Stoneham-et-Tewkesbury</a>
-          <a href="/saint-laurent-de-l-ile-d-orleans">Saint-Laurent-de-l'Île-d'Orléans</a>
-          <a href="/lac-delage">Lac-Delage</a>
-          <a href="/saint-casimir">Saint-Casimir</a>
-          <a href="/sainte-petronille">Sainte-Pétronille</a>
-          <a href="/saint-aime-des-lacs">Saint-Aimé-des-Lacs</a>
+          <a href="/saint-thuribe">Saint-Thuribe</a>
           <a href="/wendake">Wendake</a>
-          <a href="/saint-ubalde">Saint-Ubalde</a>
-          <a href="/sainte-brigitte-de-laval">Sainte-Brigitte-de-Laval</a>
-          <a href="/saint-alban">Saint-Alban</a>
           <a href="/notre-dame-des-anges">Notre-Dame-des-Anges</a>
+          <a href="/saint-gabriel-de-valcartier">Saint-Gabriel-de-Valcartier</a>
+          <a href="/lac-delage">Lac-Delage</a>
+          <a href="/baie-saint-paul">Baie-Saint-Paul</a>
+          <a href="/sainte-christine-d-auvergne">Sainte-Christine-d'Auvergne</a>
+          <a href="/clermont">Clermont</a>
+          <a href="/portneuf">Portneuf</a>
+          <a href="/petite-riviere-saint-francois">Petite-Rivière-Saint-François</a>
+          <a href="/deschambault-grondines">Deschambault-Grondines</a>
+          <a href="/lac-jacques-cartier">Lac-Jacques-Cartier</a>
+          <a href="/saint-basile">Saint-Basile</a>
+          <a href="/lac-beauport">Lac-Beauport</a>
+          <a href="/lac-sergent">Lac-Sergent</a>
         </div>
       </div>
 
@@ -977,7 +978,7 @@ function nextStep(n) {
 
 function prevStep(n) { showStep(n); }
 
-var _submitUrl = '/';
+var _submitUrl = 'https://api.web3forms.com/submit';
 var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {

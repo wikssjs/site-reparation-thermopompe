@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          11 demandes de réparation cette semaine
+          18 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -213,10 +213,11 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" name="devis-reparation-thermopompe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="devis-reparation-thermopompe">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="d0cdf004-bd9a-40d1-a49a-fb91f28363ed">
+  <input type="hidden" name="subject" value="Nouveau lead — Réparation Thermopompe Québec — Saint-Denis-De La Bouteillerie">
   <input type="hidden" name="ville-cible" value="Saint-Denis-De La Bouteillerie">
-  <p class="hidden"><label>Ne pas remplir: <input name="bot-field"></label></p>
+  <input type="hidden" name="botcheck" value="">
 
   <div class="rp-form-step active" id="step-1">
     <p style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.875rem">Problème constaté</p>
@@ -848,28 +849,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          11 demandes de réparation cette semaine
+          18 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Bas-Saint-Laurent (01)</h4>
         <div class="el-footer__links">
-          <a href="/saint-arsene">Saint-Arsène</a>
-          <a href="/la-pocatiere">La Pocatière</a>
-          <a href="/saint-rene-de-matane">Saint-René-de-Matane</a>
-          <a href="/causapscal">Causapscal</a>
-          <a href="/saint-fabien">Saint-Fabien</a>
-          <a href="/riviere-bleue">Rivière-Bleue</a>
-          <a href="/saint-alexandre-de-kamouraska">Saint-Alexandre-de-Kamouraska</a>
+          <a href="/sainte-flavie">Sainte-Flavie</a>
           <a href="/lac-des-aigles">Lac-des-Aigles</a>
-          <a href="/notre-dame-des-neiges">Notre-Dame-des-Neiges</a>
+          <a href="/sainte-florence">Sainte-Florence</a>
+          <a href="/saint-marc-du-lac-long">Saint-Marc-du-Lac-Long</a>
+          <a href="/baie-des-sables">Baie-des-Sables</a>
+          <a href="/saint-donat">Saint-Donat</a>
+          <a href="/auclair">Auclair</a>
+          <a href="/saint-gabriel-lalemant">Saint-Gabriel-Lalemant</a>
+          <a href="/saint-octave-de-metis">Saint-Octave-de-Métis</a>
+          <a href="/riviere-patapedia-est">Rivière-Patapédia-Est</a>
+          <a href="/saint-narcisse-de-rimouski">Saint-Narcisse-de-Rimouski</a>
+          <a href="/sainte-marguerite-marie">Sainte-Marguerite-Marie</a>
+          <a href="/albertville">Albertville</a>
           <a href="/saint-germain-de-kamouraska">Saint-Germain-de-Kamouraska</a>
-          <a href="/saint-tharcisius">Saint-Tharcisius</a>
-          <a href="/saint-athanase">Saint-Athanase</a>
-          <a href="/saint-eloi">Saint-Éloi</a>
-          <a href="/sainte-angele-de-merici">Sainte-Angèle-de-Mérici</a>
-          <a href="/matane">Matane</a>
+          <a href="/lac-matapedia">Lac-Matapédia</a>
         </div>
       </div>
 
@@ -965,7 +966,7 @@ function nextStep(n) {
 
 function prevStep(n) { showStep(n); }
 
-var _submitUrl = '/';
+var _submitUrl = 'https://api.web3forms.com/submit';
 var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {
