@@ -37,7 +37,7 @@
         "name": "Saint-Siméon",
         "containedInPlace": {
           "@type": "AdministrativeArea",
-          "name": "Gaspésie--Îles-de-la-Madeleine (11)"
+          "name": "Capitale-Nationale (03)"
         }
       },
       "priceRange": "$$-$$$",
@@ -59,8 +59,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Gaspésie--Îles-de-la-Madeleine (11)",
-          "item": "https://thermopompe-reparation.ca/region/gaspesie-iles-de-la-madeleine-11"
+          "name": "Capitale-Nationale (03)",
+          "item": "https://thermopompe-reparation.ca/region/capitale-nationale-03"
         },
         {
           "@type": "ListItem",
@@ -127,7 +127,7 @@
     <nav class="el-breadcrumb__inner">
       <a href="/">Accueil</a>
       <span class="el-breadcrumb__sep">›</span>
-      <a href="/region/gaspesie-iles-de-la-madeleine-11">Gaspésie--Îles-de-la-Madeleine (11)</a>
+      <a href="/region/capitale-nationale-03">Capitale-Nationale (03)</a>
       <span class="el-breadcrumb__sep">›</span>
       <span class="el-breadcrumb__current">Réparation Thermopompe Saint-Siméon</span>
     </nav>
@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          17 demandes de réparation cette semaine
+          13 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -289,7 +289,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
     </label>
   </div>
   <p id="panne-error" style="display:none"
-data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
+ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
 </div>
 
 
@@ -307,7 +307,8 @@ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon t
       
 <div class="el-field">
   <label class="el-label">Marque de la thermopompe</label>
-  <select name="marque" requireddata-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
+  <select name="marque"
+ required data-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="mitsubishi">Mitsubishi Electric</option>
     <option value="daikin">Daikin</option>
@@ -324,7 +325,8 @@ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon t
       
 <div class="el-field">
   <label class="el-label">Âge approximatif du système</label>
-  <select name="age-systeme" requireddata-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
+  <select name="age-systeme"
+ required data-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="moins-5">Moins de 5 ans</option>
     <option value="5-10">5 à 10 ans</option>
@@ -384,7 +386,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
     </label>
   </div>
   <p id="urgence-error" style="display:none"
-data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
+ data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
 </div>
 
 
@@ -405,7 +407,7 @@ data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre dema
 <div class="el-field">
   <label class="el-label">Prénom et nom</label>
   <input type="text" name="nom"
-placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
+ placeholder="Marie Tremblay" required data-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
 </div>
 
 
@@ -413,7 +415,7 @@ placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour
 <div class="el-field">
   <label class="el-label">Courriel</label>
   <input type="email" name="courriel"
-placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est requis pour recevoir les soumissions de réparation."data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
+ placeholder="marie@exemple.com" required data-err-required="Votre courriel est requis pour recevoir les soumissions de réparation." data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
 </div>
 
 
@@ -421,7 +423,7 @@ placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est req
 <div class="el-field">
   <label class="el-label">Téléphone</label>
   <input type="tel" name="telephone"
-placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement."data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
+ placeholder="514 000-0000" required data-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement." data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
 </div>
 
 
@@ -429,7 +431,7 @@ placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis po
 <div class="el-field">
   <label class="el-label">Informations supplementaires</label>
   <textarea name="commentaires" rows="3"
-placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situation..."    class="el-textarea"></textarea>
+ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situation..."    class="el-textarea"></textarea>
 </div>
 
 
@@ -507,14 +509,14 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
 <section class="" style="background:var(--bg);padding-block:4.5rem 5rem;border-bottom:1px solid var(--bdr)">
   <div class="el-wrap-sm">
     <div class="rp-city-intro">
-      <h2>Votre thermopompe face aux cycles gel-dégel de Saint-Siméon</h2>
-<p>À Saint-Siméon, les thermopompes subissent une contrainte particulière : les cycles répétés de gel-dégel, surtout au printemps et en automne, usent prématurément les composants sensibles. L'unité extérieure accumule de l'eau dans les connecteurs électriques et les cartes de contrôle, ce qui provoque des courts-circuits ou des défaillances intermittentes. Le compresseur, sollicité davantage lors des appels de chauffage en grand froid, subit des à-coups thermiques qui réduisent sa durée de vie. L'humidité côtière accélère aussi la corrosion des serpentins et des tuyauteries, créant des micro-fuites qui font perdre du fluide réfrigérant mois après mois. Si votre appareil a plus de 12 ans, ces facteurs climatiques combinés rendent une panne majeure statistiquement probable dans les deux prochaines années. Une inspection régulière du circuit et du contrôleur électronique permet de détecter ces dégâts avant qu'ils ne causent une panne complète et coûteuse.</p>
+      <h2>Votre thermopompe grelotte ? Les pièges du climat de Capitale-Nationale à Saint-Siméon</h2>
+<p>À Saint-Siméon, les alternances gel-dégel et les grands froids prolongés créent des conditions très exigeantes pour votre thermopompe. Quand les températures plongent sous zéro pendant plusieurs jours, le compresseur doit travailler constamment pour extraire les calories de l'air froid, ce qui augmente la pression interne du circuit réfrigérant et fatigue les pièces bien plus vite qu'ailleurs. Ensuite, les redoux du printemps apportent de la condensation qui s'accumule dans les joints et les soudures, favorisant les micro-fuites. L'unité extérieure s'encrasse avec la neige, la glace et la poussière locale, ce qui bloque l'échangeur thermique et oblige le système à forcer davantage. Résultat : le capaciteur et les contacteurs électriques souffrent des écarts thermiques répétés, et le détendeur peut se bloquer si des traces d'humidité gèlent dedans. Si votre système approche 15 à 20 ans et qu'il a fonctionné sans relâche chaque hiver, ces usures s'accumulent. Un diagnostic précoce vous permet de remplacer une petite pièce plutôt que de vous retrouver sans chauffage en janvier.</p>
 
-<h2>Reconnaître les signes d'alerte avant la panne hivernale</h2>
-<p>Plusieurs symptômes doivent vous alerter à Saint-Siméon, notamment un air tiède ou froid en mode chauffage alors que le compresseur tourne, une unité extérieure constamment givrée même après le dégivrage automatique, ou des bruits inhabituels comme des cliquetis, des sifflements ou des vibrations. Ces signaux indiquent souvent une baisse de pression réfrigérante, un détendeur encrassé, une électrovanne défectueuse ou un compresseur fatigué. Un voyant d'erreur sur le panneau de contrôle est un message direct : ne l'ignorez pas, car il peut signifier une surchauffe imminente ou une surcharge électrique. Ces pannes progressives peuvent devenir critique en quelques semaines, surtout pendant l'hiver où votre thermopompe fonctionne sans interruption. Plus tôt vous faites intervenir un technicien certifié, moins vous risquez de vous retrouver sans chauffage lors d'une tempête et à devoir improviser des solutions d'urgence coûteuses.</p>
+<h2>Les signaux d'alerte que vous ne devez pas ignorer cet hiver à Saint-Siméon</h2>
+<p>Soyez attentif à trois symptômes courants qui annoncent une panne imminente. Premièrement, si votre thermopompe envoie de l'air tiède ou froid alors qu'elle est en mode chauffage, c'est souvent un détendeur bloqué ou une fuite de réfrigérant — plus vous attendez, plus le compresseur travaille sans résultat et plus il s'endommage. Deuxièmement, une unité extérieure givrée en permanence, même après déglaçage automatique, indique que le cycle de dégivrage ne fonctionne plus correctement, ce qui réduit votre confort et use le compresseur. Troisièmement, écoutez : des cliquetis répétés, un sifflement aigu ou un grondement sourd sortant de l'unité intérieure suggèrent des problèmes électriques ou mécaniques. À Saint-Siméon, où les délais pour avoir un technicien peuvent s'étirer en hiver, mieux vaut appeler dès le premier signe anormal plutôt que d'attendre la panne totale. Un diagnostic rapide coûte 125 à 225 dollars et vous évite bien des tracas.</p>
 
-<h2>Évaluer honnêtement : réparer ou remplacer votre système</h2>
-<p>Beaucoup de propriétaires à Saint-Siméon hésitent face à une réparation majeure. La règle du 50 % offre une orientation : si la pièce défectueuse coûte plus de 50 % du prix d'un remplacement complet, il est souvent plus judicieux d'investir dans un appareil neuf avec garantie. Pour un système de 15 à 20 ans, le compresseur, le détendeur ou la carte électronique peuvent atteindre ces seuils rapidement. Attention : si votre unité fonctionne avec du réfrigérant R-22 (ancien modèle), la recharge est interdite depuis 2010 ; il faut convertir ou remplacer. Un vrai devis écrit, après diagnostic sur site et non par téléphone, doit détailler chaque pièce et travail. Ne faites jamais remplacer une pièce sans avoir confirmé c'est bien celle-ci qui pose problème ; trop de techniciens sans scrupules vendent des solutions sur suspicion. Un professionnel honnête vous explique les deux options avec leurs coûts réels et les garanties offertes.</p>
+<h2>Réparer ou remplacer : comment prendre la bonne décision sans vous faire surcharger</h2>
+<p>La règle du 50 % vous guide : si le coût de réparation dépasse 50 % du prix d'un remplacement complet, et que votre système a plus de 15 ans, le remplacement est généralement plus sage à long terme. À Saint-Siméon, une réparation majeure (compresseur, détendeur) peut coûter 1 800 à 3 200 dollars, ce qui approche déjà un tiers du prix d'une nouvelle installation. Attention au réfrigérant : si votre thermopompe fonctionne avec du R-22 (interdit depuis 2020), une recharge est illégale et très chère, ce qui rend souvent le remplacement inévitable. Avant de signer un bon de travail, exigez un diagnostic écrit détaillé et un devis clair avec les pièces à remplacer — jamais d'estimation par téléphone. Un technicien honnête vous explique pourquoi chaque réparation est nécessaire et vous propose des options. Si vous doutez, demandez un deuxième avis : ça coûte peu et vous tranquillisera.</p>
     </div>
   </div>
 </section>
@@ -851,28 +853,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          17 demandes de réparation cette semaine
+          13 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
-        <h4 class="el-footer__col-label">Réparation thermopompe en Gaspésie--Îles-de-la-Madeleine (11)</h4>
+        <h4 class="el-footer__col-label">Réparation thermopompe en Capitale-Nationale (03)</h4>
         <div class="el-footer__links">
-          <a href="/la-martre">La Martre</a>
-          <a href="/les-iles-de-la-madeleine">Les Îles-de-la-Madeleine</a>
-          <a href="/riviere-saint-jean">Rivière-Saint-Jean</a>
-          <a href="/paspebiac">Paspébiac</a>
-          <a href="/sainte-therese-de-gaspe">Sainte-Thérèse-de-Gaspé</a>
-          <a href="/murdochville">Murdochville</a>
-          <a href="/mont-saint-pierre">Mont-Saint-Pierre</a>
-          <a href="/port-daniel-gascons">Port-Daniel--Gascons</a>
-          <a href="/matapedia">Matapédia</a>
-          <a href="/saint-alphonse">Saint-Alphonse</a>
-          <a href="/grande-vallee">Grande-Vallée</a>
-          <a href="/grosse-ile">Grosse-Île</a>
-          <a href="/riviere-nouvelle">Rivière-Nouvelle</a>
-          <a href="/riviere-bonaventure">Rivière-Bonaventure</a>
-          <a href="/mont-alexandre">Mont-Alexandre</a>
+          <a href="/saint-aime-des-lacs">Saint-Aimé-des-Lacs</a>
+          <a href="/saint-basile">Saint-Basile</a>
+          <a href="/saint-urbain">Saint-Urbain</a>
+          <a href="/saint-leonard-de-portneuf">Saint-Léonard-de-Portneuf</a>
+          <a href="/saint-joachim">Saint-Joachim</a>
+          <a href="/wendake">Wendake</a>
+          <a href="/saint-thuribe">Saint-Thuribe</a>
+          <a href="/saint-tite-des-caps">Saint-Tite-des-Caps</a>
+          <a href="/saint-gabriel-de-valcartier">Saint-Gabriel-de-Valcartier</a>
+          <a href="/linton">Linton</a>
+          <a href="/sainte-famille-de-l-ile-d-orleans">Sainte-Famille-de-l'Île-d'Orléans</a>
+          <a href="/saint-gilbert">Saint-Gilbert</a>
+          <a href="/saint-pierre-de-l-ile-d-orleans">Saint-Pierre-de-l'Île-d'Orléans</a>
+          <a href="/lac-croche">Lac-Croche</a>
+          <a href="/lac-delage">Lac-Delage</a>
         </div>
       </div>
 
@@ -880,7 +882,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         <h4 class="el-footer__col-label">Navigation</h4>
         <nav class="el-footer__nav">
           <a href="/">Accueil</a>
-          <a href="/region/gaspesie-iles-de-la-madeleine-11">Gaspésie--Îles-de-la-Madeleine (11)</a>
+          <a href="/region/capitale-nationale-03">Capitale-Nationale (03)</a>
           <a href="/sitemap-index.xml">Plan du site XML</a>
         </nav>
       </div>
@@ -889,7 +891,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
 
     <div class="el-footer__bottom">
       <p>© 2026 Réparation Thermopompe Québec · Tous droits réservés</p>
-      <p>Réparation Thermopompe · Saint-Siméon · Gaspésie--Îles-de-la-Madeleine (11)</p>
+      <p>Réparation Thermopompe · Saint-Siméon · Capitale-Nationale (03)</p>
     </div>
   </div>
 </footer>
@@ -1156,13 +1158,6 @@ if (_stickyBar) {
       var item=btn.closest('.el-faq-item');
       var isOpen=item.classList.contains('is-open');
       document.querySelectorAll('.el-faq-item.is-open').forEach(function(i){i.classList.remove('is-open');});
-      if(!isOpen)item.classList.add('is-open');
-    });
-  });
-})();
-</script>
-</body>
-</html>-open');});
       if(!isOpen)item.classList.add('is-open');
     });
   });

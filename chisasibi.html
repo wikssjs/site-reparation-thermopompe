@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          20 demandes de réparation cette semaine
+          10 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -289,7 +289,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
     </label>
   </div>
   <p id="panne-error" style="display:none"
-data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
+ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
 </div>
 
 
@@ -307,7 +307,8 @@ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon t
       
 <div class="el-field">
   <label class="el-label">Marque de la thermopompe</label>
-  <select name="marque" requireddata-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
+  <select name="marque"
+ required data-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="mitsubishi">Mitsubishi Electric</option>
     <option value="daikin">Daikin</option>
@@ -324,7 +325,8 @@ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon t
       
 <div class="el-field">
   <label class="el-label">Âge approximatif du système</label>
-  <select name="age-systeme" requireddata-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
+  <select name="age-systeme"
+ required data-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="moins-5">Moins de 5 ans</option>
     <option value="5-10">5 à 10 ans</option>
@@ -384,7 +386,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
     </label>
   </div>
   <p id="urgence-error" style="display:none"
-data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
+ data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
 </div>
 
 
@@ -405,7 +407,7 @@ data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre dema
 <div class="el-field">
   <label class="el-label">Prénom et nom</label>
   <input type="text" name="nom"
-placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
+ placeholder="Marie Tremblay" required data-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
 </div>
 
 
@@ -413,7 +415,7 @@ placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour
 <div class="el-field">
   <label class="el-label">Courriel</label>
   <input type="email" name="courriel"
-placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est requis pour recevoir les soumissions de réparation."data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
+ placeholder="marie@exemple.com" required data-err-required="Votre courriel est requis pour recevoir les soumissions de réparation." data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
 </div>
 
 
@@ -421,7 +423,7 @@ placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est req
 <div class="el-field">
   <label class="el-label">Téléphone</label>
   <input type="tel" name="telephone"
-placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement."data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
+ placeholder="514 000-0000" required data-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement." data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
 </div>
 
 
@@ -429,7 +431,7 @@ placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis po
 <div class="el-field">
   <label class="el-label">Informations supplementaires</label>
   <textarea name="commentaires" rows="3"
-placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situation..."    class="el-textarea"></textarea>
+ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situation..."    class="el-textarea"></textarea>
 </div>
 
 
@@ -668,7 +670,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
           </svg>
         </button>
         <div class="el-faq-body">
-          <div class="el-faq-a">Règle générale : si le coût de réparation dépasse 50% de la valeur d'un nouveau système, le remplacement est plus avantageux. Une thermopompe de plus de 15 ans à Chisasibi avec une panne de compresseur (947$–3492$) mérite souvent d'être remplacée pour bénéficier des nouvelles technologies Inverter et des rabais Hydro-Québec.</div>
+          <div class="el-faq-a">Règle générale : si le coût de réparation dépasse 50% de la valeur d'un nouveau système, le remplacement est plus avantageux. Une thermopompe de plus de 15 ans à Chisasibi avec une panne de compresseur (898$–3193$) mérite souvent d'être remplacée pour bénéficier des nouvelles technologies Inverter et des rabais Hydro-Québec.</div>
         </div>
       </div>
       <div class="el-faq-item">
@@ -679,7 +681,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
           </svg>
         </button>
         <div class="el-faq-body">
-          <div class="el-faq-a">Le givre excessif sur une thermopompe à Chisasibi peut indiquer: niveau de réfrigérant insuffisant (fuite), filtre très encrassé, problème de ventilateur ou conditions météo extrêmes. Si le cycle de dégivrage automatique ne suffit pas, une recharge de réfrigérant (174$–498$) ou une réparation de ventilateur est nécessaire.</div>
+          <div class="el-faq-a">Le givre excessif sur une thermopompe à Chisasibi peut indiquer: niveau de réfrigérant insuffisant (fuite), filtre très encrassé, problème de ventilateur ou conditions météo extrêmes. Si le cycle de dégivrage automatique ne suffit pas, une recharge de réfrigérant (149$–449$) ou une réparation de ventilateur est nécessaire.</div>
         </div>
       </div>
       <div class="el-faq-item">
@@ -690,7 +692,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
           </svg>
         </button>
         <div class="el-faq-body">
-          <div class="el-faq-a">D'abord, vérifiez le thermostat, le disjoncteur et les filtres. Si tout est correct, le problème peut venir du compresseur, du réfrigérant ou de la carte de contrôle. Un technicien certifié à Chisasibi peut diagnostiquer la panne (199$–498$) et effectuer la réparation dans la plupart des cas lors de la même visite.</div>
+          <div class="el-faq-a">D'abord, vérifiez le thermostat, le disjoncteur et les filtres. Si tout est correct, le problème peut venir du compresseur, du réfrigérant ou de la carte de contrôle. Un technicien certifié à Chisasibi peut diagnostiquer la panne (199$–473$) et effectuer la réparation dans la plupart des cas lors de la même visite.</div>
         </div>
       </div>
       <div class="el-faq-item">
@@ -712,7 +714,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
           </svg>
         </button>
         <div class="el-faq-body">
-          <div class="el-faq-a">Un bruit anormal (grincement, vibration, claquement) indique souvent un problème mécanique qui s'aggrave si ignoré. À Chisasibi, les techniciens identifient généralement: ventilateur défectueux, compresseur en fin de vie, pales déséquilibrées ou vis desserrées. Un diagnostic (199$–498$) évite une panne totale coûteuse.</div>
+          <div class="el-faq-a">Un bruit anormal (grincement, vibration, claquement) indique souvent un problème mécanique qui s'aggrave si ignoré. À Chisasibi, les techniciens identifient généralement: ventilateur défectueux, compresseur en fin de vie, pales déséquilibrées ou vis desserrées. Un diagnostic (199$–473$) évite une panne totale coûteuse.</div>
         </div>
       </div>
       <div class="el-faq-item">
@@ -754,7 +756,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         <div class="el-price-card__range">
           199&thinsp;$
           <span class="el-price-card__sep">–</span>
-          498&thinsp;$
+          473&thinsp;$
         </div>
       </div>
       <div class="el-price-card el-price-card--feat el-reveal">
@@ -765,9 +767,9 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         <h3 class="el-price-card__name">Réparation complète</h3>
         <p class="el-price-card__sub">Pièces OEM · Garantie incluse</p>
         <div class="el-price-card__range">
-          598&thinsp;$
+          548&thinsp;$
           <span class="el-price-card__sep">–</span>
-          2794&thinsp;$
+          2494&thinsp;$
         </div>
         <a href="#formulaire" onclick="document.getElementById('formulaire').scrollIntoView({behavior:'smooth'});return false;"
            class="el-price-card__cta">
@@ -781,9 +783,9 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         <h3 class="el-price-card__name">Recharge réfrigérant</h3>
         <p class="el-price-card__sub">R410A / R32 certifié</p>
         <div class="el-price-card__range">
-          174&thinsp;$
+          149&thinsp;$
           <span class="el-price-card__sep">–</span>
-          498&thinsp;$
+          449&thinsp;$
         </div>
       </div>
     </div>
@@ -794,14 +796,14 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--accent)"><use href="#icon-hammer"/></svg>
         </div>
         <p style="font-size:.8125rem;font-weight:700;color:var(--txt);margin-bottom:.25rem">Remplacement compresseur</p>
-        <p style="font-size:.875rem;color:var(--accent);font-weight:700">947$ — 3492$</p>
+        <p style="font-size:.875rem;color:var(--accent);font-weight:700">898$ — 3193$</p>
       </div>
       <div style="background:var(--bg);border:1.5px solid var(--bdr);border-radius:var(--radius-sm);padding:1.125rem;text-align:center">
         <div style="margin-bottom:.5rem">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--accent)"><use href="#icon-shield"/></svg>
         </div>
         <p style="font-size:.8125rem;font-weight:700;color:var(--txt);margin-bottom:.25rem">Contrat d'entretien annuel</p>
-        <p style="font-size:.875rem;color:var(--accent);font-weight:700">199$ — 498$/an</p>
+        <p style="font-size:.875rem;color:var(--accent);font-weight:700">199$ — 473$/an</p>
       </div>
     </div>
 
@@ -857,7 +859,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          20 demandes de réparation cette semaine
+          10 demandes de réparation cette semaine
         </div>
       </div>
 

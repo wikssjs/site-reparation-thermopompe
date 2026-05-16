@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          17 demandes de réparation cette semaine
+          7 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -289,7 +289,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
     </label>
   </div>
   <p id="panne-error" style="display:none"
-data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
+ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
 </div>
 
 
@@ -307,7 +307,8 @@ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon t
       
 <div class="el-field">
   <label class="el-label">Marque de la thermopompe</label>
-  <select name="marque" requireddata-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
+  <select name="marque"
+ required data-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="mitsubishi">Mitsubishi Electric</option>
     <option value="daikin">Daikin</option>
@@ -324,7 +325,8 @@ data-err-msg="Indiquez le problème constaté pour que nous identifions le bon t
       
 <div class="el-field">
   <label class="el-label">Âge approximatif du système</label>
-  <select name="age-systeme" requireddata-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
+  <select name="age-systeme"
+ required data-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="moins-5">Moins de 5 ans</option>
     <option value="5-10">5 à 10 ans</option>
@@ -384,7 +386,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
     </label>
   </div>
   <p id="urgence-error" style="display:none"
-data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
+ data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
 </div>
 
 
@@ -405,7 +407,7 @@ data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre dema
 <div class="el-field">
   <label class="el-label">Prénom et nom</label>
   <input type="text" name="nom"
-placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
+ placeholder="Marie Tremblay" required data-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
 </div>
 
 
@@ -413,7 +415,7 @@ placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour
 <div class="el-field">
   <label class="el-label">Courriel</label>
   <input type="email" name="courriel"
-placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est requis pour recevoir les soumissions de réparation."data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
+ placeholder="marie@exemple.com" required data-err-required="Votre courriel est requis pour recevoir les soumissions de réparation." data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
 </div>
 
 
@@ -421,7 +423,7 @@ placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est req
 <div class="el-field">
   <label class="el-label">Téléphone</label>
   <input type="tel" name="telephone"
-placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement."data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
+ placeholder="514 000-0000" required data-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement." data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
 </div>
 
 
@@ -429,7 +431,7 @@ placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis po
 <div class="el-field">
   <label class="el-label">Informations supplementaires</label>
   <textarea name="commentaires" rows="3"
-placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situation..."    class="el-textarea"></textarea>
+ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situation..."    class="el-textarea"></textarea>
 </div>
 
 
@@ -855,28 +857,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          17 demandes de réparation cette semaine
+          7 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Montérégie (16)</h4>
         <div class="el-footer__links">
-          <a href="/saint-zotique">Saint-Zotique</a>
-          <a href="/saint-valentin">Saint-Valentin</a>
-          <a href="/saint-bernard-de-lacolle">Saint-Bernard-de-Lacolle</a>
-          <a href="/hinchinbrooke">Hinchinbrooke</a>
-          <a href="/napierville">Napierville</a>
-          <a href="/sainte-martine">Sainte-Martine</a>
-          <a href="/howick">Howick</a>
-          <a href="/saint-paul-de-l-ile-aux-noix">Saint-Paul-de-l'Île-aux-Noix</a>
-          <a href="/hudson">Hudson</a>
-          <a href="/pincourt">Pincourt</a>
+          <a href="/longueuil">Longueuil</a>
+          <a href="/huntingdon">Huntingdon</a>
+          <a href="/henryville">Henryville</a>
+          <a href="/akwesasne">Akwesasne</a>
+          <a href="/saint-dominique">Saint-Dominique</a>
           <a href="/sainte-justine-de-newton">Sainte-Justine-de-Newton</a>
-          <a href="/ormstown">Ormstown</a>
-          <a href="/saint-amable">Saint-Amable</a>
-          <a href="/saint-basile-le-grand">Saint-Basile-le-Grand</a>
-          <a href="/saint-mathieu-de-beloeil">Saint-Mathieu-de-Beloeil</a>
+          <a href="/saint-bruno-de-montarville">Saint-Bruno-de-Montarville</a>
+          <a href="/saint-valerien-de-milton">Saint-Valérien-de-Milton</a>
+          <a href="/roxton-falls">Roxton Falls</a>
+          <a href="/hinchinbrooke">Hinchinbrooke</a>
+          <a href="/sorel-tracy">Sorel-Tracy</a>
+          <a href="/les-cedres">Les Cèdres</a>
+          <a href="/saint-paul-de-l-ile-aux-noix">Saint-Paul-de-l'Île-aux-Noix</a>
+          <a href="/otterburn-park">Otterburn Park</a>
+          <a href="/sainte-madeleine">Sainte-Madeleine</a>
         </div>
       </div>
 
