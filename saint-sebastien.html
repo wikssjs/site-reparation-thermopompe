@@ -1022,17 +1022,4 @@ if (_stickyBar) {
 })();
 </script>
 </body>
-</html>}
-  /* FAQ accordion */
-  document.querySelectorAll('.el-faq-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var item=btn.closest('.el-faq-item');
-      var isOpen=item.classList.contains('is-open');
-      document.querySelectorAll('.el-faq-item.is-open').forEach(function(i){i.classList.remove('is-open');});
-      if(!isOpen)item.classList.add('is-open');
-    });
-  });
-})();
-</script>
-</body>
 </html>
