@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          10 demandes de réparation cette semaine
+          12 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -857,28 +857,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          10 demandes de réparation cette semaine
+          12 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Abitibi-Témiscamingue (08)</h4>
         <div class="el-footer__links">
+          <a href="/notre-dame-du-nord">Notre-Dame-du-Nord</a>
           <a href="/belleterre">Belleterre</a>
-          <a href="/poularies">Poularies</a>
-          <a href="/malartic">Malartic</a>
-          <a href="/rapide-danseur">Rapide-Danseur</a>
-          <a href="/val-saint-gilles">Val-Saint-Gilles</a>
-          <a href="/lorrainville">Lorrainville</a>
-          <a href="/remigny">Rémigny</a>
-          <a href="/saint-marc-de-figuery">Saint-Marc-de-Figuery</a>
-          <a href="/champneuf">Champneuf</a>
-          <a href="/lac-duparquet">Lac-Duparquet</a>
-          <a href="/guerin">Guérin</a>
-          <a href="/sainte-helene-de-mancebourg">Sainte-Hélène-de-Mancebourg</a>
+          <a href="/chazel">Chazel</a>
+          <a href="/riviere-ojima">Rivière-Ojima</a>
           <a href="/senneterre">Senneterre</a>
-          <a href="/barraute">Barraute</a>
-          <a href="/matchi-manitou">Matchi-Manitou</a>
+          <a href="/la-motte">La Motte</a>
+          <a href="/macamic">Macamic</a>
+          <a href="/latulipe-et-gaboury">Latulipe-et-Gaboury</a>
+          <a href="/gallichan">Gallichan</a>
+          <a href="/la-morandiere-rochebaucourt">La Morandière-Rochebaucourt</a>
+          <a href="/saint-lambert">Saint-Lambert</a>
+          <a href="/malartic">Malartic</a>
+          <a href="/la-corne">La Corne</a>
+          <a href="/rouyn-noranda">Rouyn-Noranda</a>
+          <a href="/senneterre">Senneterre</a>
         </div>
       </div>
 
@@ -1040,17 +1040,16 @@ function showStep(n) {
   _fStep = n;
 }
 
-function nextStep(n) {
-  var current = document.getElementById('step-' + _fStep);
-  if (!current) { showStep(n); return; }
+function _validateStep(current, stepNum) {
   var errCount = 0;
-
   current.querySelectorAll('input[required], select[required], textarea[required]').forEach(function(inp) {
     if (inp.type === 'radio') return;
+    var isSelect = (inp.tagName === 'SELECT');
     if (!inp.value.trim()) {
       errCount++;
       _fieldErr(inp, inp.dataset.errRequired || 'Ce champ est requis.');
       inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      if (isSelect) inp.addEventListener('change', function() { _clearErr(inp); }, {once: true});
       return;
     }
     if (inp.type === 'tel') {
@@ -1069,19 +1068,26 @@ function nextStep(n) {
       }
     }
   });
-
-  _radioGroups.forEach(function(rg) {
-    if (rg.step !== _fStep) return;
-    var checked = current.querySelector('input[name="' + rg.name + '"]:checked');
-    if (!checked) {
-      errCount++;
-      if (rg.error) {
-        var errEl = document.getElementById(rg.error);
-        if (errEl) _showRadioErr(errEl, rg.name, current);
+  if (stepNum !== undefined) {
+    _radioGroups.forEach(function(rg) {
+      if (rg.step !== stepNum) return;
+      var checked = current.querySelector('input[name="' + rg.name + '"]:checked');
+      if (!checked) {
+        errCount++;
+        if (rg.error) {
+          var errEl = document.getElementById(rg.error);
+          if (errEl) _showRadioErr(errEl, rg.name, current);
+        }
       }
-    }
-  });
+    });
+  }
+  return errCount;
+}
 
+function nextStep(n) {
+  var current = document.getElementById('step-' + _fStep);
+  if (!current) { showStep(n); return; }
+  var errCount = _validateStep(current, _fStep);
   if (errCount > 0) { _showBanner(current, errCount); return; }
   showStep(n);
 }
@@ -1105,6 +1111,11 @@ var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {
     e.preventDefault();
+    var current = document.getElementById('step-' + _fStep);
+    if (current) {
+      var errCount = _validateStep(current, _fStep);
+      if (errCount > 0) { _showBanner(current, errCount); return; }
+    }
     var data = new FormData(_form);
     fetch(_submitUrl, {
       method: 'POST',
