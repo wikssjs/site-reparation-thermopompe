@@ -37,7 +37,7 @@
         "name": "Sainte-Félicité",
         "containedInPlace": {
           "@type": "AdministrativeArea",
-          "name": "Chaudière-Appalaches (12)"
+          "name": "Bas-Saint-Laurent (01)"
         }
       },
       "priceRange": "$$-$$$",
@@ -59,8 +59,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Chaudière-Appalaches (12)",
-          "item": "https://thermopompe-reparation.ca/region/chaudiere-appalaches-12"
+          "name": "Bas-Saint-Laurent (01)",
+          "item": "https://thermopompe-reparation.ca/region/bas-saint-laurent-01"
         },
         {
           "@type": "ListItem",
@@ -127,7 +127,7 @@
     <nav class="el-breadcrumb__inner">
       <a href="/">Accueil</a>
       <span class="el-breadcrumb__sep">›</span>
-      <a href="/region/chaudiere-appalaches-12">Chaudière-Appalaches (12)</a>
+      <a href="/region/bas-saint-laurent-01">Bas-Saint-Laurent (01)</a>
       <span class="el-breadcrumb__sep">›</span>
       <span class="el-breadcrumb__current">Réparation Thermopompe Sainte-Félicité</span>
     </nav>
@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          14 demandes de réparation cette semaine
+          18 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -288,7 +288,8 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       </div>
     </label>
   </div>
-  <p id="panne-error" class="hidden" style="font-size:.75rem;color:#ef4444;margin-top:.25rem;display:none">Veuillez faire un choix.</p>
+  <p id="panne-error" style="display:none"
+data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
 </div>
 
 
@@ -306,7 +307,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       
 <div class="el-field">
   <label class="el-label">Marque de la thermopompe</label>
-  <select name="marque" required class="el-select">
+  <select name="marque" requireddata-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="mitsubishi">Mitsubishi Electric</option>
     <option value="daikin">Daikin</option>
@@ -323,7 +324,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       
 <div class="el-field">
   <label class="el-label">Âge approximatif du système</label>
-  <select name="age-systeme" required class="el-select">
+  <select name="age-systeme" requireddata-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="moins-5">Moins de 5 ans</option>
     <option value="5-10">5 à 10 ans</option>
@@ -382,7 +383,8 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       </div>
     </label>
   </div>
-  <p id="urgence-error" class="hidden" style="font-size:.75rem;color:#ef4444;margin-top:.25rem;display:none">Veuillez faire un choix.</p>
+  <p id="urgence-error" style="display:none"
+data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
 </div>
 
 
@@ -403,7 +405,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
 <div class="el-field">
   <label class="el-label">Prénom et nom</label>
   <input type="text" name="nom"
-placeholder="Marie Tremblay"required    class="el-input">
+placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
 </div>
 
 
@@ -411,7 +413,7 @@ placeholder="Marie Tremblay"required    class="el-input">
 <div class="el-field">
   <label class="el-label">Courriel</label>
   <input type="email" name="courriel"
-placeholder="marie@exemple.com"required    class="el-input">
+placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est requis pour recevoir les soumissions de réparation."data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
 </div>
 
 
@@ -419,7 +421,7 @@ placeholder="marie@exemple.com"required    class="el-input">
 <div class="el-field">
   <label class="el-label">Téléphone</label>
   <input type="tel" name="telephone"
-placeholder="514 000-0000"required    class="el-input">
+placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement."data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
 </div>
 
 
@@ -506,18 +508,18 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
   <div class="el-wrap-sm">
     <div class="rp-city-intro">
       <section>
-  <h2>Votre thermopompe givre en permanence : ce qu'il faut savoir à Sainte-Félicité</h2>
-  <p>En Chaudière-Appalaches, les cycles gel-dégel du printemps et les grands froids de l'hiver forcent votre thermopompe à travailler sans relâche. Si l'unité extérieure reste couverte de givre même après le cycle de dégivrage, c'est souvent le signe que le compresseur peine à maintenir la pression nécessaire, ou que le capteur de température qui déclenche le dégivrage automatique est défaillant. Cette accumulation de glace réduit l'échange de chaleur et peut endommager le ventilateur ou le circuit réfrigérant. À Sainte-Félicité, où les maisons sont parfois mal isolées et les hivers particulièrement exigeants, ne pas intervenir rapidement aggrave l'usure : le compresseur tourne en surcharge, les composantes électroniques surchauffent, et vous risquez une panne complète en plein cœur de l'hiver. Si vous constatez ce problème, un diagnostic précis de votre technicien certifié permettra de différencier une simple accumulation de glace normale d'une défaillance du système de dégivrage ou du capteur.</p>
+  <h2>Votre thermopompe gèle en permanence : ce que le climat de Sainte-Félicité provoque</h2>
+  <p>À Sainte-Félicité, les cycles répétés de gel-dégel et l'humidité maritime fragilisent votre thermopompe plus qu'ailleurs. Quand le mercure chute et que le givre s'accumule sur l'unité extérieure malgré les tentatives de dégivrage automatique, c'est souvent le signal que le cycle de dégivrage dysfonctionnne ou que le compresseur peine à maintenir la pression nécessaire. L'humidité ambiante favorise aussi l'encrassement des drains de condensation et des ventilateurs, ce qui réduit l'échange thermique et force le système à tourner plus dur. En parallèle, les grands froids sollicitent intensément les contacteurs électriques et la carte de commande : des surchauffes répétées les fatiguent et peuvent causer des blocages inattendus. Si votre appareil a 15 ans ou plus—ce qui est courant dans le secteur—ces composants approchent de la fin de leur durée de vie. Une inspection rapide par un technicien certifié permet de distinguer un simple nettoyage d'une panne majeure du compresseur avant qu'elle ne vous laisse sans chauffage en plein cœur de l'hiver.</p>
 </section>
 
 <section>
-  <h2>Thermopompe qui souffle du froid en mode chauffage : diagnostic rapide pour votre maison</h2>
-  <p>Si votre thermopompe produit de l'air froid alors que vous l'avez réglée en mode chauffage, plusieurs causes peuvent l'expliquer, et toutes demandent une intervention rapide. Le cycle de dégivrage peut être en cours — c'est normal quelques minutes —, mais si le phénomène persiste plus de 15 à 20 minutes, le problème vient souvent d'une vanne d'inversion qui ne bascule plus correctement, d'une fuite réfrigérant ou d'un capteur électronique défaillant. À Sainte-Félicité, les systèmes datant de 15 à 20 ans sont particulièrement vulnérables à ces pannes. Avant d'appeler un technicien, notez la température extérieure, l'heure exacte du dysfonctionnement et la durée. Un diagnostic écrit d'un professionnel certifié en réfrigération vous permettra de comprendre si une simple réparation suffira ou si un remplacement s'impose. Ne laissez pas traîner : sans chauffage fiable pendant l'hiver régional, vous risquez l'inconfort et l'augmentation de vos factures.</p>
+  <h2>Reconnaître les signes d'alerte avant que la panne vous immobilise</h2>
+  <p>Certains symptômes vous donnent quelques heures ou jours pour agir avant de vous retrouver dans le froid. Un bruit de cliquetis ou de sifflement provenant de l'unité extérieure peut indiquer un ventilateur mal équilibré, une vibration excessive ou une baisse de pression réfrigérante—autant de situations qui s'aggravent rapidement. Si votre mode chauffage souffle de l'air tiède alors que dehors il fait -15°C, c'est souvent le signe d'un détendeur bloqué ou d'une fuite de réfrigérant. Un voyant de panne allumé sur la console intérieure ne doit jamais être ignoré : il encode un code d'erreur qui oriente le diagnostic. À Sainte-Félicité, où les délais pour obtenir un technicien peuvent s'étirer en hiver, chaque jour de retard risque de transformer une réparation mineure en remplacement coûteux. Notez précisément ces symptômes avant d'appeler un réparateur : quand ils ont commencé, dans quelles conditions, s'ils sont constants ou intermittents. Ces informations aident le technicien à cibler la panne sans perdre de temps et à vous proposer une solution adaptée à votre situation.</p>
 </section>
 
 <section>
-  <h2>Remplacer ou réparer : comment évaluer honnêtement le coût réel à Sainte-Félicité</h2>
-  <p>La règle du 50 % est votre premier repère : si le coût de réparation dépasse la moitié du prix d'un remplacement neuf et que votre thermopompe a plus de 15 ans, un changement devient souvent plus judicieux qu'une réparation provisoire. À Sainte-Félicité, où les hivers sont longs et l'équipement très sollicité, les systèmes anciens accumulent les petites pannes coûteuses. Attention aussi au réfrigérant R-22, interdit à la recharge depuis plusieurs années : si votre thermopompe utilise ce fluide et qu'il fuit, la recharge devient astronomique, ce qui penche fortement vers le remplacement. Un bon technicien certifié vous présentera un devis écrit détaillant le diagnostic, la pièce ou le travail concerné, et vous expliquera pourquoi cette solution est la meilleure pour votre situation. Exigez toujours ce devis avant d'accepter : un technicien honnête ne vous vendra jamais une thermopompe entière si seul un capaciteur ou un détendeur doit être changé.</p>
+  <h2>Réparer ou remplacer : comment évaluer sans vous faire vendre inutilement</h2>
+  <p>Face à une thermopompe défaillante après 12, 15 ou 18 ans, la tentation du fournisseur est grande de vous proposer un appareil neuf. Pourtant, il existe une règle simple : si le coût de réparation dépasse 50 % du prix d'un remplacement complet, et que votre système a déjà cet âge, la question du remplacement se pose. Mais ne vous laissez pas pressez sans diagnostic écrit. Exigez d'un technicien certifié qu'il vous propose un devis détaillé avant de changer la moindre pièce—jamais de diagnostic par téléphone. Si votre appareil fonctionne avec du réfrigérant R-22 (interdit à la recharge depuis des années), une simple recharge coûtera très cher et ne résout rien à long terme. À Sainte-Félicité, certaines maisons souffrent d'une isolation médiocre ou de gaines mal dimensionnées : améliorer l'enveloppe thermique peut parfois suffire avant d'investir dans un remplacement. Un vrai technicien RBQ et certifié réfrigération prendra le temps de vérifier l'isolation, la configuration des gaines et l'historique de pannes avant de conclure. Ce diagnostic honnête protège votre portefeuille et vous aide à prendre la bonne décision.</p>
 </section>
     </div>
   </div>
@@ -855,28 +857,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          14 demandes de réparation cette semaine
+          18 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
-        <h4 class="el-footer__col-label">Réparation thermopompe en Chaudière-Appalaches (12)</h4>
+        <h4 class="el-footer__col-label">Réparation thermopompe en Bas-Saint-Laurent (01)</h4>
         <div class="el-footer__links">
-          <a href="/la-durantaye">La Durantaye</a>
-          <a href="/saint-neree-de-bellechasse">Saint-Nérée-de-Bellechasse</a>
-          <a href="/saint-gervais">Saint-Gervais</a>
-          <a href="/saint-malachie">Saint-Malachie</a>
-          <a href="/sainte-rose-de-watford">Sainte-Rose-de-Watford</a>
-          <a href="/sainte-aurelie">Sainte-Aurélie</a>
-          <a href="/saint-pamphile">Saint-Pamphile</a>
-          <a href="/lac-etchemin">Lac-Etchemin</a>
-          <a href="/val-alain">Val-Alain</a>
-          <a href="/saint-philemon">Saint-Philémon</a>
-          <a href="/montmagny">Montmagny</a>
-          <a href="/saint-antoine-de-l-isle-aux-grues">Saint-Antoine-de-l'Isle-aux-Grues</a>
-          <a href="/saint-raphael">Saint-Raphaël</a>
-          <a href="/sainte-sabine">Sainte-Sabine</a>
-          <a href="/saint-adrien-d-irlande">Saint-Adrien-d'Irlande</a>
+          <a href="/degelis">Dégelis</a>
+          <a href="/saint-modeste">Saint-Modeste</a>
+          <a href="/saint-alexandre-de-kamouraska">Saint-Alexandre-de-Kamouraska</a>
+          <a href="/sainte-rita">Sainte-Rita</a>
+          <a href="/petit-lac-sainte-anne">Petit-Lac-Sainte-Anne</a>
+          <a href="/saint-jean-de-dieu">Saint-Jean-de-Dieu</a>
+          <a href="/saint-louis-du-ha-ha">Saint-Louis-du-Ha! Ha!</a>
+          <a href="/routhierville">Routhierville</a>
+          <a href="/notre-dame-des-neiges">Notre-Dame-des-Neiges</a>
+          <a href="/lejeune">Lejeune</a>
+          <a href="/saint-hubert-de-riviere-du-loup">Saint-Hubert-de-Rivière-du-Loup</a>
+          <a href="/saint-anaclet-de-lessard">Saint-Anaclet-de-Lessard</a>
+          <a href="/saint-rene-de-matane">Saint-René-de-Matane</a>
+          <a href="/saint-gabriel-lalemant">Saint-Gabriel-Lalemant</a>
+          <a href="/esprit-saint">Esprit-Saint</a>
         </div>
       </div>
 
@@ -884,7 +886,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         <h4 class="el-footer__col-label">Navigation</h4>
         <nav class="el-footer__nav">
           <a href="/">Accueil</a>
-          <a href="/region/chaudiere-appalaches-12">Chaudière-Appalaches (12)</a>
+          <a href="/region/bas-saint-laurent-01">Bas-Saint-Laurent (01)</a>
           <a href="/sitemap-index.xml">Plan du site XML</a>
         </nav>
       </div>
@@ -893,7 +895,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
 
     <div class="el-footer__bottom">
       <p>© 2026 Réparation Thermopompe Québec · Tous droits réservés</p>
-      <p>Réparation Thermopompe · Sainte-Félicité · Chaudière-Appalaches (12)</p>
+      <p>Réparation Thermopompe · Sainte-Félicité · Bas-Saint-Laurent (01)</p>
     </div>
   </div>
 </footer>
@@ -1018,7 +1020,7 @@ function _showRadioErr(errEl, groupName, stepEl) {
   while (errEl.firstChild) errEl.removeChild(errEl.firstChild);
   errEl.appendChild(_mkSvg('warn'));
   var span = document.createElement('span');
-  span.textContent = 'Veuillez faire un choix.';
+  span.textContent = errEl.dataset.errMsg || 'Veuillez faire un choix.';
   errEl.appendChild(span);
   stepEl.querySelectorAll('input[name="' + groupName + '"]').forEach(function(r) {
     r.addEventListener('change', function() { errEl.style.display = 'none'; }, {once: true});
@@ -1047,7 +1049,7 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       errCount++;
-      _fieldErr(inp, 'Ce champ est requis.');
+      _fieldErr(inp, inp.dataset.errRequired || 'Ce champ est requis.');
       inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       return;
     }
@@ -1055,14 +1057,14 @@ function nextStep(n) {
       var digits = inp.value.replace(/\D/g, '');
       if (digits.length !== 10) {
         errCount++;
-        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex. : 514 000-0000).');
+        _fieldErr(inp, inp.dataset.errFormat || 'Numéro invalide — 10 chiffres requis (ex. : 514 000-0000).');
         inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       }
     }
     if (inp.type === 'email') {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
         errCount++;
-        _fieldErr(inp, 'Adresse courriel invalide.');
+        _fieldErr(inp, inp.dataset.errFormat || 'Adresse courriel invalide.');
         inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       }
     }

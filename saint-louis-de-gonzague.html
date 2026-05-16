@@ -37,7 +37,7 @@
         "name": "Saint-Louis-de-Gonzague",
         "containedInPlace": {
           "@type": "AdministrativeArea",
-          "name": "Montérégie (16)"
+          "name": "Chaudière-Appalaches (12)"
         }
       },
       "priceRange": "$$-$$$",
@@ -59,8 +59,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Montérégie (16)",
-          "item": "https://thermopompe-reparation.ca/region/monteregie-16"
+          "name": "Chaudière-Appalaches (12)",
+          "item": "https://thermopompe-reparation.ca/region/chaudiere-appalaches-12"
         },
         {
           "@type": "ListItem",
@@ -127,7 +127,7 @@
     <nav class="el-breadcrumb__inner">
       <a href="/">Accueil</a>
       <span class="el-breadcrumb__sep">›</span>
-      <a href="/region/monteregie-16">Montérégie (16)</a>
+      <a href="/region/chaudiere-appalaches-12">Chaudière-Appalaches (12)</a>
       <span class="el-breadcrumb__sep">›</span>
       <span class="el-breadcrumb__current">Réparation Thermopompe Saint-Louis-de-Gonzague</span>
     </nav>
@@ -288,7 +288,8 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       </div>
     </label>
   </div>
-  <p id="panne-error" class="hidden" style="font-size:.75rem;color:#ef4444;margin-top:.25rem;display:none">Veuillez faire un choix.</p>
+  <p id="panne-error" style="display:none"
+data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
 </div>
 
 
@@ -306,7 +307,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       
 <div class="el-field">
   <label class="el-label">Marque de la thermopompe</label>
-  <select name="marque" required class="el-select">
+  <select name="marque" requireddata-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="mitsubishi">Mitsubishi Electric</option>
     <option value="daikin">Daikin</option>
@@ -323,7 +324,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       
 <div class="el-field">
   <label class="el-label">Âge approximatif du système</label>
-  <select name="age-systeme" required class="el-select">
+  <select name="age-systeme" requireddata-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="moins-5">Moins de 5 ans</option>
     <option value="5-10">5 à 10 ans</option>
@@ -382,7 +383,8 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       </div>
     </label>
   </div>
-  <p id="urgence-error" class="hidden" style="font-size:.75rem;color:#ef4444;margin-top:.25rem;display:none">Veuillez faire un choix.</p>
+  <p id="urgence-error" style="display:none"
+data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
 </div>
 
 
@@ -403,7 +405,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
 <div class="el-field">
   <label class="el-label">Prénom et nom</label>
   <input type="text" name="nom"
-placeholder="Marie Tremblay"required    class="el-input">
+placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
 </div>
 
 
@@ -411,7 +413,7 @@ placeholder="Marie Tremblay"required    class="el-input">
 <div class="el-field">
   <label class="el-label">Courriel</label>
   <input type="email" name="courriel"
-placeholder="marie@exemple.com"required    class="el-input">
+placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est requis pour recevoir les soumissions de réparation."data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
 </div>
 
 
@@ -419,7 +421,7 @@ placeholder="marie@exemple.com"required    class="el-input">
 <div class="el-field">
   <label class="el-label">Téléphone</label>
   <input type="tel" name="telephone"
-placeholder="514 000-0000"required    class="el-input">
+placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement."data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
 </div>
 
 
@@ -505,14 +507,20 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
 <section class="" style="background:var(--bg);padding-block:4.5rem 5rem;border-bottom:1px solid var(--bdr)">
   <div class="el-wrap-sm">
     <div class="rp-city-intro">
-      <h2>Unité extérieure givrée en permanence : ce que cela signale réellement à Saint-Louis-de-Gonzague</h2>
-<p>À Saint-Louis-de-Gonzague, les cycles répétés de gel-dégel printanier créent une accumulation de givre qui paraît normale, mais qui devient problématique quand elle persiste même après quelques heures de fonctionnement ou en fin d'après-midi. Votre thermopompe devrait se « dégivrer » automatiquement : si le givre reste blanc et épais sur l'échangeur, c'est que le système de dégivrage ne fonctionne pas correctement. Cela force le compresseur à travailler dans des conditions extrêmes, réduisant son efficacité et accélérant l'usure du circuit réfrigérant. Le cliquetis métallique qu'on entend parfois accompagne souvent ce problème. Un technicien doit vérifier la sonde de température extérieure et le contacteur de dégivrage avant que le compresseur lui-même ne soit endommagé. Agir rapidement protège votre investissement.</p>
+      <section>
+  <h2>Reconnaître les signes d'une thermopompe en détresse à Saint-Louis-de-Gonzague</h2>
+  <p>Votre thermopompe vous parle avant de tomber en panne : restez attentif aux signaux. Si le chauffage reste tiède malgré un appareil qui tourne, c'est souvent un problème de circulation du fluide réfrigérant ou un détendeur encrassé par le cycle gel-dégel typique de la région. Une unité extérieure constamment recouverte de givre, même en fin d'hiver, indique un dégivrage défaillant — courant à Saint-Louis-de-Gonzague où l'humidité printanière accumule de la glace. Les bruits secs ou les cliquetis du compresseur signalent une usure mécanique ou une pression anormale; le sifflement fin révèle souvent une fuite de réfrigérant. Un voyant rouge ou orange sur le panneau de contrôle ne doit jamais être ignoré : c'est le signal que l'appareil force et qu'une intervention technique s'impose sans tarder, avant que les dégâts s'aggravent et que le coût de réparation explose.</p>
+</section>
 
-<h2>Thermopompe de 2008-2012 : comprendre la limite des réparations sans vous faire vendre du neuf</h2>
-<p>Si votre système date de cette période — quand les programmes d'efficacité énergétique ont équipé massivement les maisons montérégiennes — vous approchez ou avez dépassé les 12-15 ans de durée de vie utile. À Saint-Louis-de-Gonzague, les hivers rigoureux usent ces appareils plus vite que la moyenne québécoise. Avant de remplacer, appliquez la règle honnête du 50 % : si le devis de réparation dépasse la moitié du coût d'un remplacement complet, le changement devient logique. Attention au réfrigérant R-22 : s'il s'échappe, ce fluide ne peut plus être acheté depuis 2020, ce qui rend la recharge impossible ou prohibitive. Demandez toujours un diagnostic écrit avant toute proposition de pièce majeure. Un technicien certifié détaillera précisément pourquoi le compresseur ou le détendeur doit être changé, plutôt que vous promettre une solution par téléphone.</p>
+<section>
+  <h2>Entretien d'automne à Saint-Louis-de-Gonzague : parer à la panne en plein hiver</h2>
+  <p>L'entretien préventif coûte peu comparé à une réparation d'urgence un soir de tempête. Avant les grands froids de novembre, faites inspecter votre système par un technicien certifié : nettoyage des filtres à air, vérification des connexions électriques, contrôle de la pression du circuit réfrigérant et test du dégivrage. À Saint-Louis-de-Gonzague, cette visite préventive d'une heure ou deux permet de déceler un capaciteur fatigué, une alimentation électrique instable ou une accumulation de saletés avant qu'elles ne causent un arrêt brutal. Le coût d'une inspection préventive (environ 150 à 250 $) paraît négligeable face aux frais d'un appel d'urgence en janvier, où la disponibilité des techniciens s'étire et où chaque heure compte pour rétablir votre chauffage. Agir en septembre ou octobre, c'est dormir tranquille tout l'hiver.</p>
+</section>
 
-<h2>Trouver rapidement un technicien certifié à Saint-Louis-de-Gonzague quand le chauffage faiblit</h2>
-<p>Saint-Louis-de-Gonzague est une zone rurale de Montérégie où les délais dépassent souvent les 3-5 jours en hiver : les techniciens certifiés sont concentrés à Beloeil, Saint-Bruno et Brossard. Ne perdez pas de temps avec des appels sans devis écrit : demandez immédiatement une visite de diagnostic avant tout engagement de pièces. Vérifiez que le technicien détient une attestation provinciale de manipulation de réfrigérant (obligatoire) et une licence RBQ valide. Posez ces questions dès le premier contact : « Pouvez-vous venir diagnostiquer cette semaine ? » et « Votre devis détaille-t-il chaque pièce et sa main-d'œuvre ? » Les urgences hivernales justifient un appel immédiat, car attendre deux semaines sans chauffage crée un risque pour votre famille et aggrave les dégâts sur la machine. Un technicien certifié refusera de promettre un prix au téléphone.</p>
+<section>
+  <h2>Réparer ou remplacer : faire la bonne décision pour votre thermopompe à Saint-Louis-de-Gonzague</h2>
+  <p>Un appareil installé entre 2006 et 2012 approche de ses 15 à 20 ans : à cet âge, chaque réparation doit être pesée honnêtement. La règle du 50 % vous aide : si le devis de réparation atteint la moitié du coût d'un remplacement complet, mieux vaut investir dans un appareil neuf, plus efficace et sous garantie. À Saint-Louis-de-Gonzague, attention aussi au réfrigérant R-22, interdit à la recharge depuis 2020 : si votre système en contient et qu'une recharge est proposée, méfiez-vous — c'est souvent le signal qu'il est temps de changer l'unité. Demandez toujours un diagnostic écrit avant tout remplacement de pièce, et refusez les devis par téléphone. Un technicien honnête examinera l'appareil sur place, testera chaque composante, puis vous présentera les options réalistes sans vous forcer la main vers une dépense inutile.</p>
+</section>
     </div>
   </div>
 </section>
@@ -854,23 +862,23 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
       </div>
 
       <div>
-        <h4 class="el-footer__col-label">Réparation thermopompe en Montérégie (16)</h4>
+        <h4 class="el-footer__col-label">Réparation thermopompe en Chaudière-Appalaches (12)</h4>
         <div class="el-footer__links">
-          <a href="/saint-charles-sur-richelieu">Saint-Charles-sur-Richelieu</a>
-          <a href="/mcmasterville">McMasterville</a>
-          <a href="/saint-remi">Saint-Rémi</a>
-          <a href="/saint-valerien-de-milton">Saint-Valérien-de-Milton</a>
-          <a href="/ange-gardien">Ange-Gardien</a>
-          <a href="/sainte-catherine">Sainte-Catherine</a>
-          <a href="/chambly">Chambly</a>
-          <a href="/riviere-beaudette">Rivière-Beaudette</a>
-          <a href="/boucherville">Boucherville</a>
-          <a href="/rigaud">Rigaud</a>
-          <a href="/saint-alexandre">Saint-Alexandre</a>
-          <a href="/yamaska">Yamaska</a>
-          <a href="/saint-telesphore">Saint-Télesphore</a>
-          <a href="/pincourt">Pincourt</a>
-          <a href="/saint-nazaire-d-acton">Saint-Nazaire-d'Acton</a>
+          <a href="/sainte-sabine">Sainte-Sabine</a>
+          <a href="/saint-benjamin">Saint-Benjamin</a>
+          <a href="/saint-theophile">Saint-Théophile</a>
+          <a href="/beauceville">Beauceville</a>
+          <a href="/saint-jacques-de-leeds">Saint-Jacques-de-Leeds</a>
+          <a href="/east-broughton">East Broughton</a>
+          <a href="/sainte-clotilde-de-beauce">Sainte-Clotilde-de-Beauce</a>
+          <a href="/cap-saint-ignace">Cap-Saint-Ignace</a>
+          <a href="/sainte-claire">Sainte-Claire</a>
+          <a href="/sainte-henedine">Sainte-Hénédine</a>
+          <a href="/tourville">Tourville</a>
+          <a href="/saint-damien-de-buckland">Saint-Damien-de-Buckland</a>
+          <a href="/saint-prosper">Saint-Prosper</a>
+          <a href="/saint-benoit-labre">Saint-Benoît-Labre</a>
+          <a href="/saint-pierre-de-la-riviere-du-sud">Saint-Pierre-de-la-Rivière-du-Sud</a>
         </div>
       </div>
 
@@ -878,7 +886,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         <h4 class="el-footer__col-label">Navigation</h4>
         <nav class="el-footer__nav">
           <a href="/">Accueil</a>
-          <a href="/region/monteregie-16">Montérégie (16)</a>
+          <a href="/region/chaudiere-appalaches-12">Chaudière-Appalaches (12)</a>
           <a href="/sitemap-index.xml">Plan du site XML</a>
         </nav>
       </div>
@@ -887,7 +895,7 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
 
     <div class="el-footer__bottom">
       <p>© 2026 Réparation Thermopompe Québec · Tous droits réservés</p>
-      <p>Réparation Thermopompe · Saint-Louis-de-Gonzague · Montérégie (16)</p>
+      <p>Réparation Thermopompe · Saint-Louis-de-Gonzague · Chaudière-Appalaches (12)</p>
     </div>
   </div>
 </footer>
@@ -1012,7 +1020,7 @@ function _showRadioErr(errEl, groupName, stepEl) {
   while (errEl.firstChild) errEl.removeChild(errEl.firstChild);
   errEl.appendChild(_mkSvg('warn'));
   var span = document.createElement('span');
-  span.textContent = 'Veuillez faire un choix.';
+  span.textContent = errEl.dataset.errMsg || 'Veuillez faire un choix.';
   errEl.appendChild(span);
   stepEl.querySelectorAll('input[name="' + groupName + '"]').forEach(function(r) {
     r.addEventListener('change', function() { errEl.style.display = 'none'; }, {once: true});
@@ -1041,7 +1049,7 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       errCount++;
-      _fieldErr(inp, 'Ce champ est requis.');
+      _fieldErr(inp, inp.dataset.errRequired || 'Ce champ est requis.');
       inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       return;
     }
@@ -1049,14 +1057,14 @@ function nextStep(n) {
       var digits = inp.value.replace(/\D/g, '');
       if (digits.length !== 10) {
         errCount++;
-        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex. : 514 000-0000).');
+        _fieldErr(inp, inp.dataset.errFormat || 'Numéro invalide — 10 chiffres requis (ex. : 514 000-0000).');
         inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       }
     }
     if (inp.type === 'email') {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
         errCount++;
-        _fieldErr(inp, 'Adresse courriel invalide.');
+        _fieldErr(inp, inp.dataset.errFormat || 'Adresse courriel invalide.');
         inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       }
     }

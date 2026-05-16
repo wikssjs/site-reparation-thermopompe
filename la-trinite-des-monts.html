@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          4 demandes de réparation cette semaine
+          6 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -288,7 +288,8 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       </div>
     </label>
   </div>
-  <p id="panne-error" class="hidden" style="font-size:.75rem;color:#ef4444;margin-top:.25rem;display:none">Veuillez faire un choix.</p>
+  <p id="panne-error" style="display:none"
+data-err-msg="Indiquez le problème constaté pour que nous identifions le bon technicien de réparation."  ></p>
 </div>
 
 
@@ -306,7 +307,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       
 <div class="el-field">
   <label class="el-label">Marque de la thermopompe</label>
-  <select name="marque" required class="el-select">
+  <select name="marque" requireddata-err-required="La marque est nécessaire pour identifier les pièces de remplacement disponibles."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="mitsubishi">Mitsubishi Electric</option>
     <option value="daikin">Daikin</option>
@@ -323,7 +324,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       
 <div class="el-field">
   <label class="el-label">Âge approximatif du système</label>
-  <select name="age-systeme" required class="el-select">
+  <select name="age-systeme" requireddata-err-required="L'âge du système aide les techniciens à orienter leur diagnostic."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="moins-5">Moins de 5 ans</option>
     <option value="5-10">5 à 10 ans</option>
@@ -382,7 +383,8 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       </div>
     </label>
   </div>
-  <p id="urgence-error" class="hidden" style="font-size:.75rem;color:#ef4444;margin-top:.25rem;display:none">Veuillez faire un choix.</p>
+  <p id="urgence-error" style="display:none"
+data-err-msg="Précisez l'urgence pour que les techniciens priorisent votre demande de réparation."  ></p>
 </div>
 
 
@@ -403,7 +405,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
 <div class="el-field">
   <label class="el-label">Prénom et nom</label>
   <input type="text" name="nom"
-placeholder="Marie Tremblay"required    class="el-input">
+placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour que le technicien vous identifie lors de l'appel."    class="el-input">
 </div>
 
 
@@ -411,7 +413,7 @@ placeholder="Marie Tremblay"required    class="el-input">
 <div class="el-field">
   <label class="el-label">Courriel</label>
   <input type="email" name="courriel"
-placeholder="marie@exemple.com"required    class="el-input">
+placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est requis pour recevoir les soumissions de réparation."data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
 </div>
 
 
@@ -419,7 +421,7 @@ placeholder="marie@exemple.com"required    class="el-input">
 <div class="el-field">
   <label class="el-label">Téléphone</label>
   <input type="tel" name="telephone"
-placeholder="514 000-0000"required    class="el-input">
+placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis pour qu'un technicien vous rappelle rapidement."data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
 </div>
 
 
@@ -855,28 +857,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          4 demandes de réparation cette semaine
+          6 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Bas-Saint-Laurent (01)</h4>
         <div class="el-footer__links">
-          <a href="/saint-jean-de-cherbourg">Saint-Jean-de-Cherbourg</a>
-          <a href="/l-isle-verte">L'Isle-Verte</a>
-          <a href="/riviere-patapedia-est">Rivière-Patapédia-Est</a>
-          <a href="/saint-damase">Saint-Damase</a>
-          <a href="/saint-mathieu-de-rioux">Saint-Mathieu-de-Rioux</a>
-          <a href="/cacouna">Cacouna</a>
-          <a href="/kamouraska">Kamouraska</a>
-          <a href="/riviere-bonjour">Rivière-Bonjour</a>
-          <a href="/sayabec">Sayabec</a>
-          <a href="/saint-donat">Saint-Donat</a>
-          <a href="/metis-sur-mer">Métis-sur-Mer</a>
-          <a href="/routhierville">Routhierville</a>
-          <a href="/sainte-irene">Sainte-Irène</a>
-          <a href="/sainte-helene-de-kamouraska">Sainte-Hélène-de-Kamouraska</a>
+          <a href="/sainte-flavie">Sainte-Flavie</a>
+          <a href="/lac-des-eaux-mortes">Lac-des-Eaux-Mortes</a>
+          <a href="/kataskomiq">Kataskomiq</a>
+          <a href="/saint-bruno-de-kamouraska">Saint-Bruno-de-Kamouraska</a>
+          <a href="/saint-hubert-de-riviere-du-loup">Saint-Hubert-de-Rivière-du-Loup</a>
+          <a href="/matane">Matane</a>
           <a href="/causapscal">Causapscal</a>
+          <a href="/sainte-paule">Sainte-Paule</a>
+          <a href="/saint-marcellin">Saint-Marcellin</a>
+          <a href="/esprit-saint">Esprit-Saint</a>
+          <a href="/baie-des-sables">Baie-des-Sables</a>
+          <a href="/saint-valerien">Saint-Valérien</a>
+          <a href="/saint-paul-de-la-croix">Saint-Paul-de-la-Croix</a>
+          <a href="/saint-michel-du-squatec">Saint-Michel-du-Squatec</a>
+          <a href="/lac-au-saumon">Lac-au-Saumon</a>
         </div>
       </div>
 
@@ -1018,7 +1020,7 @@ function _showRadioErr(errEl, groupName, stepEl) {
   while (errEl.firstChild) errEl.removeChild(errEl.firstChild);
   errEl.appendChild(_mkSvg('warn'));
   var span = document.createElement('span');
-  span.textContent = 'Veuillez faire un choix.';
+  span.textContent = errEl.dataset.errMsg || 'Veuillez faire un choix.';
   errEl.appendChild(span);
   stepEl.querySelectorAll('input[name="' + groupName + '"]').forEach(function(r) {
     r.addEventListener('change', function() { errEl.style.display = 'none'; }, {once: true});
@@ -1047,7 +1049,7 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       errCount++;
-      _fieldErr(inp, 'Ce champ est requis.');
+      _fieldErr(inp, inp.dataset.errRequired || 'Ce champ est requis.');
       inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       return;
     }
@@ -1055,14 +1057,14 @@ function nextStep(n) {
       var digits = inp.value.replace(/\D/g, '');
       if (digits.length !== 10) {
         errCount++;
-        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex. : 514 000-0000).');
+        _fieldErr(inp, inp.dataset.errFormat || 'Numéro invalide — 10 chiffres requis (ex. : 514 000-0000).');
         inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       }
     }
     if (inp.type === 'email') {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
         errCount++;
-        _fieldErr(inp, 'Adresse courriel invalide.');
+        _fieldErr(inp, inp.dataset.errFormat || 'Adresse courriel invalide.');
         inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       }
     }
