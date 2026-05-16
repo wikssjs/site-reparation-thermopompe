@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          4 demandes de réparation cette semaine
+          17 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -849,28 +849,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          4 demandes de réparation cette semaine
+          17 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Gaspésie--Îles-de-la-Madeleine (11)</h4>
         <div class="el-footer__links">
-          <a href="/riviere-a-claude">Rivière-à-Claude</a>
-          <a href="/riviere-nouvelle">Rivière-Nouvelle</a>
-          <a href="/carleton-sur-mer">Carleton-sur-Mer</a>
-          <a href="/mont-albert">Mont-Albert</a>
-          <a href="/hope-town">Hope Town</a>
-          <a href="/riviere-saint-jean">Rivière-Saint-Jean</a>
-          <a href="/caplan">Caplan</a>
-          <a href="/cloridorme">Cloridorme</a>
+          <a href="/escuminac">Escuminac</a>
+          <a href="/sainte-therese-de-gaspe">Sainte-Thérèse-de-Gaspé</a>
+          <a href="/chandler">Chandler</a>
+          <a href="/paspebiac">Paspébiac</a>
+          <a href="/saint-alexis-de-matapedia">Saint-Alexis-de-Matapédia</a>
           <a href="/ruisseau-ferguson">Ruisseau-Ferguson</a>
-          <a href="/port-daniel-gascons">Port-Daniel--Gascons</a>
-          <a href="/les-iles-de-la-madeleine">Les Îles-de-la-Madeleine</a>
-          <a href="/collines-du-basque">Collines-du-Basque</a>
-          <a href="/listuguj">Listuguj</a>
-          <a href="/bonaventure">Bonaventure</a>
-          <a href="/sainte-anne-des-monts">Sainte-Anne-des-Monts</a>
+          <a href="/la-martre">La Martre</a>
+          <a href="/cap-chat">Cap-Chat</a>
+          <a href="/marsoui">Marsoui</a>
+          <a href="/murdochville">Murdochville</a>
+          <a href="/new-richmond">New Richmond</a>
+          <a href="/mont-saint-pierre">Mont-Saint-Pierre</a>
+          <a href="/sainte-madeleine-de-la-riviere-madeleine">Sainte-Madeleine-de-la-Rivière-Madeleine</a>
+          <a href="/grosse-ile">Grosse-Île</a>
+          <a href="/riviere-nouvelle">Rivière-Nouvelle</a>
         </div>
       </div>
 
@@ -934,6 +934,18 @@ function showStep(n) {
   _fStep = n;
 }
 
+function _fieldErr(inp, msg) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (!p) { p = document.createElement('p'); p.className = 'form-err'; p.style.cssText = 'font-size:.75rem;color:#ef4444;margin-top:.25rem'; inp.parentNode.appendChild(p); }
+  p.textContent = msg;
+  inp.style.borderColor = '#fca5a5';
+}
+function _clearErr(inp) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (p) p.remove();
+  inp.style.borderColor = '';
+}
+
 function nextStep(n) {
   var current = document.getElementById('step-' + _fStep);
   if (!current) { showStep(n); return; }
@@ -943,8 +955,24 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       valid = false;
-      inp.style.borderColor = '#fca5a5';
-      inp.addEventListener('input', function() { inp.style.borderColor = ''; }, {once: true});
+      _fieldErr(inp, 'Ce champ est requis.');
+      inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      return;
+    }
+    if (inp.type === 'tel') {
+      var digits = inp.value.replace(/\D/g, '');
+      if (digits.length !== 10) {
+        valid = false;
+        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex: 514 000-0000).');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
+    }
+    if (inp.type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
+        valid = false;
+        _fieldErr(inp, 'Adresse courriel invalide.');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
     }
   });
 
@@ -963,6 +991,17 @@ function nextStep(n) {
   if (!valid) return;
   showStep(n);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type="tel"]').forEach(function(inp) {
+    inp.addEventListener('input', function() {
+      var d = inp.value.replace(/\D/g, '').slice(0, 10);
+      if (d.length <= 3) inp.value = d;
+      else if (d.length <= 6) inp.value = d.slice(0,3) + ' ' + d.slice(3);
+      else inp.value = d.slice(0,3) + ' ' + d.slice(3,6) + '-' + d.slice(6);
+    });
+  });
+});
 
 function prevStep(n) { showStep(n); }
 

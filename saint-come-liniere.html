@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          17 demandes de réparation cette semaine
+          6 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -855,28 +855,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          17 demandes de réparation cette semaine
+          6 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Chaudière-Appalaches (12)</h4>
         <div class="el-footer__links">
-          <a href="/notre-dame-du-sacre-coeur-d-issoudun">Notre-Dame-du-Sacré-Coeur-d'Issoudun</a>
-          <a href="/laurier-station">Laurier-Station</a>
-          <a href="/disraeli">Disraeli</a>
-          <a href="/saint-joseph-de-beauce">Saint-Joseph-de-Beauce</a>
-          <a href="/beaulac-garthby">Beaulac-Garthby</a>
-          <a href="/saint-magloire">Saint-Magloire</a>
-          <a href="/saint-luc-de-bellechasse">Saint-Luc-de-Bellechasse</a>
-          <a href="/saint-benoit-labre">Saint-Benoît-Labre</a>
-          <a href="/saint-isidore">Saint-Isidore</a>
-          <a href="/saint-gervais">Saint-Gervais</a>
-          <a href="/saint-malachie">Saint-Malachie</a>
-          <a href="/saint-adalbert">Saint-Adalbert</a>
+          <a href="/saint-gedeon-de-beauce">Saint-Gédéon-de-Beauce</a>
+          <a href="/sainte-apolline-de-patton">Sainte-Apolline-de-Patton</a>
+          <a href="/thetford-mines">Thetford Mines</a>
+          <a href="/sainte-rose-de-watford">Sainte-Rose-de-Watford</a>
+          <a href="/saint-antoine-de-tilly">Saint-Antoine-de-Tilly</a>
+          <a href="/saint-cyrille-de-lessard">Saint-Cyrille-de-Lessard</a>
+          <a href="/saint-joseph-de-coleraine">Saint-Joseph-de-Coleraine</a>
+          <a href="/berthier-sur-mer">Berthier-sur-Mer</a>
+          <a href="/scott">Scott</a>
+          <a href="/notre-dame-du-rosaire">Notre-Dame-du-Rosaire</a>
+          <a href="/notre-dame-des-pins">Notre-Dame-des-Pins</a>
+          <a href="/la-durantaye">La Durantaye</a>
+          <a href="/saint-flavien">Saint-Flavien</a>
+          <a href="/saint-neree-de-bellechasse">Saint-Nérée-de-Bellechasse</a>
           <a href="/saint-henri">Saint-Henri</a>
-          <a href="/saint-odilon-de-cranbourne">Saint-Odilon-de-Cranbourne</a>
-          <a href="/saint-philemon">Saint-Philémon</a>
         </div>
       </div>
 
@@ -940,6 +940,18 @@ function showStep(n) {
   _fStep = n;
 }
 
+function _fieldErr(inp, msg) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (!p) { p = document.createElement('p'); p.className = 'form-err'; p.style.cssText = 'font-size:.75rem;color:#ef4444;margin-top:.25rem'; inp.parentNode.appendChild(p); }
+  p.textContent = msg;
+  inp.style.borderColor = '#fca5a5';
+}
+function _clearErr(inp) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (p) p.remove();
+  inp.style.borderColor = '';
+}
+
 function nextStep(n) {
   var current = document.getElementById('step-' + _fStep);
   if (!current) { showStep(n); return; }
@@ -949,8 +961,24 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       valid = false;
-      inp.style.borderColor = '#fca5a5';
-      inp.addEventListener('input', function() { inp.style.borderColor = ''; }, {once: true});
+      _fieldErr(inp, 'Ce champ est requis.');
+      inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      return;
+    }
+    if (inp.type === 'tel') {
+      var digits = inp.value.replace(/\D/g, '');
+      if (digits.length !== 10) {
+        valid = false;
+        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex: 514 000-0000).');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
+    }
+    if (inp.type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
+        valid = false;
+        _fieldErr(inp, 'Adresse courriel invalide.');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
     }
   });
 
@@ -969,6 +997,17 @@ function nextStep(n) {
   if (!valid) return;
   showStep(n);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type="tel"]').forEach(function(inp) {
+    inp.addEventListener('input', function() {
+      var d = inp.value.replace(/\D/g, '').slice(0, 10);
+      if (d.length <= 3) inp.value = d;
+      else if (d.length <= 6) inp.value = d.slice(0,3) + ' ' + d.slice(3);
+      else inp.value = d.slice(0,3) + ' ' + d.slice(3,6) + '-' + d.slice(6);
+    });
+  });
+});
 
 function prevStep(n) { showStep(n); }
 

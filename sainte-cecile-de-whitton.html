@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="rp-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          12 demandes de réparation cette semaine
+          6 demandes de réparation cette semaine
         </div>
       </div>
 
@@ -853,28 +853,28 @@ placeholder="Ex : symptomes observes, modele de l appareil, urgence de la situat
         </p>
         <div class="el-footer__pulse-row">
           <span class="rp-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          12 demandes de réparation cette semaine
+          6 demandes de réparation cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Réparation thermopompe en Estrie (05)</h4>
         <div class="el-footer__links">
-          <a href="/kingsbury">Kingsbury</a>
-          <a href="/notre-dame-des-bois">Notre-Dame-des-Bois</a>
-          <a href="/saint-armand">Saint-Armand</a>
-          <a href="/abercorn">Abercorn</a>
-          <a href="/stanstead">Stanstead</a>
-          <a href="/ayer-s-cliff">Ayer's Cliff</a>
-          <a href="/saint-claude">Saint-Claude</a>
-          <a href="/cookshire-eaton">Cookshire-Eaton</a>
-          <a href="/saint-augustin-de-woburn">Saint-Augustin-de-Woburn</a>
-          <a href="/valcourt">Valcourt</a>
-          <a href="/saint-ludger">Saint-Ludger</a>
-          <a href="/stanstead-est">Stanstead-Est</a>
-          <a href="/hampden">Hampden</a>
-          <a href="/bromont">Bromont</a>
-          <a href="/magog">Magog</a>
+          <a href="/scotstown">Scotstown</a>
+          <a href="/marston">Marston</a>
+          <a href="/coaticook">Coaticook</a>
+          <a href="/east-hereford">East Hereford</a>
+          <a href="/stanbridge-station">Stanbridge Station</a>
+          <a href="/newport">Newport</a>
+          <a href="/sherbrooke">Sherbrooke</a>
+          <a href="/east-angus">East Angus</a>
+          <a href="/bonsecours">Bonsecours</a>
+          <a href="/saint-romain">Saint-Romain</a>
+          <a href="/brome">Brome</a>
+          <a href="/saint-denis-de-brompton">Saint-Denis-de-Brompton</a>
+          <a href="/dunham">Dunham</a>
+          <a href="/farnham">Farnham</a>
+          <a href="/bedford">Bedford</a>
         </div>
       </div>
 
@@ -938,6 +938,18 @@ function showStep(n) {
   _fStep = n;
 }
 
+function _fieldErr(inp, msg) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (!p) { p = document.createElement('p'); p.className = 'form-err'; p.style.cssText = 'font-size:.75rem;color:#ef4444;margin-top:.25rem'; inp.parentNode.appendChild(p); }
+  p.textContent = msg;
+  inp.style.borderColor = '#fca5a5';
+}
+function _clearErr(inp) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (p) p.remove();
+  inp.style.borderColor = '';
+}
+
 function nextStep(n) {
   var current = document.getElementById('step-' + _fStep);
   if (!current) { showStep(n); return; }
@@ -947,8 +959,24 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       valid = false;
-      inp.style.borderColor = '#fca5a5';
-      inp.addEventListener('input', function() { inp.style.borderColor = ''; }, {once: true});
+      _fieldErr(inp, 'Ce champ est requis.');
+      inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      return;
+    }
+    if (inp.type === 'tel') {
+      var digits = inp.value.replace(/\D/g, '');
+      if (digits.length !== 10) {
+        valid = false;
+        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex: 514 000-0000).');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
+    }
+    if (inp.type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
+        valid = false;
+        _fieldErr(inp, 'Adresse courriel invalide.');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
     }
   });
 
@@ -967,6 +995,17 @@ function nextStep(n) {
   if (!valid) return;
   showStep(n);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type="tel"]').forEach(function(inp) {
+    inp.addEventListener('input', function() {
+      var d = inp.value.replace(/\D/g, '').slice(0, 10);
+      if (d.length <= 3) inp.value = d;
+      else if (d.length <= 6) inp.value = d.slice(0,3) + ' ' + d.slice(3);
+      else inp.value = d.slice(0,3) + ' ' + d.slice(3,6) + '-' + d.slice(6);
+    });
+  });
+});
 
 function prevStep(n) { showStep(n); }
 
