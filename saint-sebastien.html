@@ -1165,17 +1165,4 @@ if (_stickyBar) {
 })();
 </script>
 </body>
-</html>}
-  /* FAQ accordion */
-  document.querySelectorAll('.rp-faq-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var item=btn.closest('.rp-faq-item');
-      var isOpen=item.classList.contains('is-open');
-      document.querySelectorAll('.rp-faq-item.is-open').forEach(function(i){i.classList.remove('is-open');});
-      if(!isOpen)item.classList.add('is-open');
-    });
-  });
-})();
-</script>
-</body>
 </html>
