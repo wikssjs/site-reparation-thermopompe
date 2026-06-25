@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /soumission-reparation-thermopompe/
 
 Sitemap: https://thermopompe-reparation.ca/sitemap-index.xml
